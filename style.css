@@ -9,6 +9,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  background-color: #f0efef;
 }
 
 html {
@@ -101,6 +102,7 @@ a:hover {
   width: fit-content;
   max-height: 0;
   overflow: hidden;
+  
   transition: all 0.3 ease-in-out;
 }
 
@@ -163,16 +165,28 @@ section {
 /* PROFILE SECTION */
 
 #profile {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   gap: 5rem;
   height: 80vh;
 }
 
+#profileimage:hover{
+  transition: transform 0.25s ease-in, transform 0.25s ease-in;
+  transform: scale(1.05);
+}
+
+#hoverimage:hover{
+  transition: transform 0.25s ease-in, transform 0.25s ease-in;
+  transform: scale(1.02); 
+}
+
 .section__pic-container {
   display: flex;
+  justify-content: center;
   height: 400px;
-  width: 400px;
+  width: 300px;
   margin: auto 0;
 }
 
@@ -197,6 +211,10 @@ section {
 .title {
   font-size: 3rem;
   text-align: center;
+  cursor: pointer;
+}
+
+.title:hover{
 }
 
 #socials-container {
@@ -301,6 +319,14 @@ section {
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
   text-align: center;
+  cursor: pointer;
+}
+
+.details-container:hover{
+  transition: background-color 0.25s ease-in, transform 0.25s ease-in;
+  background-image: url('favicon.ico');
+  background-color: black;
+  -webkit-text-fill-color: yellow;
 }
 
 .section-container {

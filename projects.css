@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+
+body{
+    font-family: "Poppins", sans-serif;
+    background-color: gainsboro;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+html {
+    scroll-behavior: smooth;
+  }
+
+#titlecontainer{
+    font-size: 25px;
+    width: 100vh;
+    display: flex;
+    justify-content: center;
+    margin-top: 3px;
+    border: 1px solid;
+    border-color: black;
+}
+
+#passion-projects{
+    list-style-type: none;
+}
+
+li{
+    list-style-type: none;
+}
