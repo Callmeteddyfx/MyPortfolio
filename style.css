@@ -214,9 +214,6 @@ section {
   cursor: pointer;
 }
 
-.title:hover{
-}
-
 #socials-container {
   display: flex;
   justify-content: center;
