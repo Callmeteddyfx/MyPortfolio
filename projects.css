@@ -3,7 +3,7 @@
 
 body{
     font-family: "Poppins", sans-serif;
-    background-color: gainsboro;
+    background-color: #f0efef;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,14 +24,84 @@ html {
     display: flex;
     justify-content: center;
     margin-top: 3px;
-    border: 1px solid;
-    border-color: black;
 }
 
 #passion-projects{
     list-style-type: none;
+    display: grid;
+    
+}
+
+
+#projectlist{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 400px;
+    border: 1px solid;
+    border-radius: 10px;
+    background-color: white;
 }
 
 li{
+    margin: 10px;
     list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(3, auto);
+}
+
+ul{
+    cursor: pointer;
+    margin: 10px;
+}
+
+ul:hover{
+    transition: transform 0.25s ease-in;
+    transform: scale(1.01);
+    border: 1px solid;
+    border-radius: 10px;
+    box-shadow: 2px 2px 0px 0px black;
+}
+
+.project-img{
+    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+    margin-top: 10px;
+}
+
+.aboutproject{
+    width: 220px;
+    height: 100px;
+    word-wrap: break-word;
+    overflow-y:scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+
+#livedemoBtn{
+    cursor: pointer;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    margin: 5px;
+    margin-bottom: 10px;
+    border: 1px solid;
+    background-color: transparent;
+    border-radius: 5px;
+    transition: all 0.2s ease-in;
+}
+
+#livedemoBtn:hover{
+    background-color: black;
+    -webkit-text-stroke: yellow;
+    -webkit-text-stroke-width: 0.2px;
+    -webkit-text-fill-color: yellow;
+}
+
+#projectscontainer{
+  
 }
