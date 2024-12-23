@@ -322,8 +322,9 @@ section {
 .details-container:hover{
   transition: background-color 0.25s ease-in, transform 0.25s ease-in;
   background-image: url('favicon.ico');
-  background-color: black;
-  -webkit-text-fill-color: yellow;
+  background-color: #918f8f;
+  border: #353535 0.05rem solid;
+  -webkit-text-fill-color: white;
 }
 
 .section-container {
@@ -389,6 +390,7 @@ article .icon {
 
 .project-img {
   border-radius: 2rem;
+  border: 0.02rem solid black;
   width: 90%;
   height: 90%;
 }
