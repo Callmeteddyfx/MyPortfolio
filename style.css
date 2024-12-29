@@ -98,7 +98,7 @@ a:hover {
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: white;
+  background-color: transparent;
   width: fit-content;
   max-height: 0;
   overflow: hidden;
@@ -177,10 +177,6 @@ section {
   transform: scale(1.05);
 }
 
-#hoverimage:hover{
-  transition: transform 0.25s ease-in, transform 0.25s ease-in;
-  transform: scale(1.02); 
-}
 
 .section__pic-container {
   display: flex;
@@ -212,6 +208,13 @@ section {
   font-size: 3rem;
   text-align: center;
   cursor: pointer;
+}
+
+.title-project{
+  font-size: 3rem;
+  text-align: center;
+  cursor: pointer;
+  -webkit-text-fill-color: blue;
 }
 
 #socials-container {
