@@ -276,6 +276,7 @@ section {
 
 .btn-color-1:hover,
 .btn-color-2:hover {
+  transition: all 0.25s ease-in-out;
   cursor: pointer;
 }
 
@@ -286,6 +287,7 @@ section {
 }
 
 .btn-color-1:hover {
+  transition: all 0.25s ease-in-out;
   background: rgb(0, 0, 0);
 }
 
@@ -294,6 +296,7 @@ section {
 }
 
 .btn-color-2:hover {
+  transition: all 0.25s ease-in-out;
   border: rgb(255, 255, 255) 0.1rem solid;
 }
 
