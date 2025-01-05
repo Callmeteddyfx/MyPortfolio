@@ -2,6 +2,16 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
+/*@media (prefers-reduced-motion: reduce) {
+  #contact {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 70vh;
+    opacity: 1;
+      }
+}*/
+
 * {
   margin: 0;
   padding: 0;

@@ -22,7 +22,7 @@ function getexpDate(){
 }
 
 // visible on scroll
-const thresholdTime = 0.2;
+const thresholdTime = 0.1;
 document.addEventListener('DOMContentLoaded', () => {
   const fadeTexts = document.querySelectorAll('.section__text__p1');
 
