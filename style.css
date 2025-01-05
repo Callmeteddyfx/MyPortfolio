@@ -162,7 +162,16 @@ section {
 
 .section-container {
   display: flex;
+  opacity: 0; /* Hidden initially */
+  transform: translateY(20px); /* Slightly below its position */
+  transition: opacity 1s ease, transform 1s ease;
 }
+
+.section-container.visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 /* PROFILE SECTION */
 
@@ -204,6 +213,13 @@ section {
 
 .section__text__p1 {
   text-align: center;
+  opacity: 0; /* Hidden initially */
+  transform: translateY(20px); /* Slightly below its position */
+  transition: opacity 1s ease, transform 1s ease;
+}
+.section__text__p1.visible{
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .section__text__p2 {
@@ -216,7 +232,14 @@ section {
   text-align: center;
   cursor: pointer;
   -webkit-text-fill-color: rgb(0, 0, 0);
+  opacity: 0; /* Hidden initially */
+  transform: translateY(20px); /* Slightly below its position */
+  transition: opacity 1s ease, transform 1s ease;
+}
 
+.title.visible{
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .title-project{
@@ -379,7 +402,17 @@ section {
 
 #experience {
   position: relative;
+  opacity: 0; /* Hidden initially */
+  transform: translateY(20px); /* Slightly below its position */
+  transition: opacity 1s ease, transform 1s ease;
 }
+
+#experience.visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 
 .experience-sub-title {
   color: rgb(85, 85, 85);
@@ -418,7 +451,16 @@ article .icon {
 
 #projects {
   position: relative;
+  opacity: 0; /* Hidden initially */
+  transform: translateY(20px); /* Slightly below its position */
+  transition: opacity 1s ease, transform 1s ease;
 }
+
+#projects.visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 .color-container {
   border-color: rgb(163, 163, 163);
@@ -452,6 +494,14 @@ article .icon {
   justify-content: center;
   flex-direction: column;
   height: 70vh;
+  opacity: 0; /* Hidden initially */
+  transform: translateY(20px); /* Slightly below its position */
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+#contact.visible{
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .contact-info-upper-container {
