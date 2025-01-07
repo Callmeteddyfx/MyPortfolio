@@ -394,7 +394,7 @@ section {
   bottom: 2.5rem;
 }
 
-.details-container {
+.details-container, .details-container.color-container {
   padding: 1.5rem;
   flex: 1;
   background: white;
