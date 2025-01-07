@@ -280,6 +280,16 @@ section {
   height: 2rem;
 }
 
+.iconpic {
+  cursor: pointer;
+  height: 1.5rem;
+}
+
+.iconpic:hover{
+  transition: all 0.3s ease;
+  transform: translateY(-6px);
+}
+
 /*.icon:hover{
   transition: all 0.25s ease-in-out;
   transform: translate(0,-3px);
@@ -297,8 +307,8 @@ section {
 .btn {
   font-weight: 600;
   transition: all 300ms ease;
-  padding: 1rem;
-  width: 8rem;
+  padding: 0.6rem;
+  width: 10rem;
   border-radius: 1rem;
 }
 
@@ -309,7 +319,7 @@ section {
 
 .btn-color-1:hover,
 .btn-color-2:hover {
-  transition: all 0.25s ease-in-out;
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
 
@@ -320,8 +330,9 @@ section {
 }
 
 .btn-color-1:hover {
-  transition: all 0.25s ease-in-out;
-  background: rgb(0, 0, 0);
+  transition: all 0.3s ease-in-out;
+  background: rgb(211, 125, 5);
+  border: none;
 }
 
 .btn-color-2 {
@@ -329,8 +340,10 @@ section {
 }
 
 .btn-color-2:hover {
-  transition: all 0.25s ease-in-out;
+  transition: all 0.3s ease;
+  background: rgb(33, 0, 181);
   border: rgb(255, 255, 255) 0.1rem solid;
+  border: none;
 }
 
 .btn-container {

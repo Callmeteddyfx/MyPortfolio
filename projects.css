@@ -56,13 +56,14 @@ html {
     background-color: white;
 }
 
-li{
+ul{
     margin: 10px;
     min-width: 200px; 
     list-style-type: none;
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     grid-template-rows: repeat(3, auto);
+    gap: 15px;
     flex: 1 1 30%;
 }
 
@@ -72,7 +73,7 @@ li{
     width: 200px;
     height: 300px;
     }
-    li{
+    ul{
       grid-template-columns: repeat(1, 1fr);
     }
   }
@@ -83,12 +84,12 @@ ul{
     transition: transform 0.25s ease;
 }
 
-ul:hover{
-    transition: transform 0.25s ease;
+li:hover{
     transform: scale(1.01);
     border: 1px solid;
     border-radius: 1.5rem;
-    box-shadow: 1px 1px 0px 0px black;
+    border: none;
+    box-shadow: 2px 2px 2px 0px black;
 }
 
 .project-img{
