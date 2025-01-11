@@ -21,6 +21,10 @@ html {
     scroll-behavior: smooth;
   }
 
+  h2{
+    cursor: pointer;
+  }
+  
 #titlecontainer{
     font-size: 25px;
     width: 100%;
