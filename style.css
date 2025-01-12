@@ -283,6 +283,7 @@ section {
   justify-content: center;
   margin-top: 1rem;
   gap: 1rem;
+  margin-bottom: 0;
 }
 
 /* ICONS */
@@ -385,7 +386,6 @@ section {
 .about-pic {
   border-radius: 2rem;
   display: none;
-  visibility: hidden;
 }
 
 .arrow {
