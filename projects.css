@@ -193,11 +193,12 @@ ul{
 }
 
 li:hover{
+    transition: all 0.25s ease;
     transform: scale(1.01);
     border: 1px solid;
     border-radius: 1.5rem;
     border: none;
-    box-shadow: 2px 2px 2px 0px black;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.2);
 }
 
 .project-img{
@@ -229,6 +230,7 @@ li:hover{
 }
 
 #livedemoBtn:hover{
+    transition: all 0.5s ease;
     background-color: black;
     -webkit-text-stroke: yellow;
     -webkit-text-stroke-width: 0.2px;
