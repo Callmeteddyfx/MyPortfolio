@@ -7,6 +7,16 @@
     <title>Projects</title>
 </head>
 <body>
+    <div id="infodiv">
+        <div id="close"><img src="./assets/cancel_black_icon.png" id="cancelbtn" onclick="closeinfo()"></div>
+        <div id="info">
+            <img src="./assets/basiccal.png" id="infoimg">
+            <div id="infotext">
+                <h2 id="name">Name</h2>
+                <p id="about">about</p>
+            </div>
+        </div>
+    </div>
     <div id="titlecontainer">
         <h1></h1>
     </div>
@@ -18,7 +28,7 @@
         <img src="./assets/codevault1.png" class="project-img">
         <h2>CodeVault</h2>
         <p class="aboutproject">Starting off in coding, I always wanted to save my mini codes as I learnt.<br> 
-        CodeVault is that tool.<br> It takes your code, and displays it using coding syntax.<br>It saves 
+        CodeVault is that tool.<br> It takes your code, and displays it using coding syntax.<br> It saves 
         your code to your Local Storage, allowing you to always be able to access your saved codes. </p>
         <button id="livedemoBtn" onclick='location.href="https://callmeteddyfx.github.io/CodeVault2/"'>Live Demo</button>
         </div>
@@ -57,10 +67,32 @@
     </div>
 </body>
 <script>
-    document.getElementById().addEventListener({
+const lists = document.querySelectorAll('.projects li');
+const infoDiv = document.getElementById('infodiv');
 
-    })
+// Add a click event listener to each <ul>
+lists.forEach((li) => {
+  li.addEventListener('click', function (event) {
+    const img = this.querySelector('img');
+    const clickedName = this.querySelector('h2');
+    const clickedAbout = this.querySelector('.aboutproject');
 
+    //About Section DOM's
+    const aboutimg = document.getElementById('infoimg');
+    const name = document.getElementById('name');
+    const about = document.getElementById('about');
 
+    console.log(img.src);
+
+    infoDiv.style.display = 'flex';
+    aboutimg.src = img.src;
+    name.textContent = clickedName.textContent;
+    about.textContent = clickedAbout.textContent;
+  });
+});
+
+function closeinfo(){
+    infoDiv.style.display = 'none';
+}
 </script>
 </html>
