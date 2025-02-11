@@ -7,10 +7,9 @@ html, body{
     display: flex;
     position:relative;
     flex-direction: column;
-    align-items: center;
     padding: 10px;
     scrollbar-width: none;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
 }
 
 * {
@@ -133,12 +132,14 @@ html {
     margin-top: 10px;
     font-weight: 600;
 }
+
 #about{
     height:50%;
     padding: 10px;
+    max-height: 200px;
     background-color: white;
     border-radius: 1rem;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 ul{
@@ -158,13 +159,24 @@ ul{
     width: 200px;
     height: 300px;
     }
-    ul{
-    grid-template-columns: repeat(1, 1fr);
+
+    html, body {
+        overflow-x: hidden !important;
     }
+
+    ul{
+     display: flex; 
+    overflow-x: auto; 
+    white-space: nowrap; 
+    max-width: 100%;
+    scrollbar-width: none;
+    }
+
     #infodiv{
         width: 300px;
         height: fit-content;
     }
+
     #info{
         height: 100%;
         width: 100%;
@@ -172,16 +184,19 @@ ul{
         flex-direction: column;
         align-items: center;
     }
+
     #infoimg{
         width: 7rem;
         height: 7rem;
     }
+
     #infotext{
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 0;
     }
+
     #name{
         margin: 0;
     }
@@ -216,9 +231,15 @@ li:hover{
     width: 80%;
     height: 50%;
     word-wrap: break-word;
-    overflow-y:auto;
+    overflow-y: auto;
+    max-height: 200px;
+    white-space: normal;
     scrollbar-width: none;
     scrollbar-color: #888 #f1f1f1;
+}
+
+.projects{
+    margin: 0;
 }
 
 #livedemoBtn{

@@ -26,11 +26,27 @@
     <li>
         <div id="projectlist">
         <img src="./assets/codevault1.png" class="project-img">
-        <h2>CodeVault</h2>
-        <p class="aboutproject">Starting off in coding, I always wanted to save my mini codes as I learnt.<br> 
-        CodeVault is that tool.<br> It takes your code, and displays it using coding syntax.<br> It saves 
+        <h2>Codevault</h2>
+        <p class="aboutproject">Starting off in coding, I always wanted to save my mini codes as I learnt
+        CodeVault is that tool. It takes your code, and displays it using coding syntax.It saves 
         your code to your Local Storage, allowing you to always be able to access your saved codes. </p>
         <button id="livedemoBtn" onclick='location.href="https://callmeteddyfx.github.io/CodeVault2/"'>Live Demo</button>
+        </div>
+    </li>
+    <li>
+        <div id="projectlist">
+        <img src="./assets/shotmaster100 .png" class="project-img">
+        <h2>Shotmaster100</h2>
+        <p class="aboutproject">
+            Shot Master is a basketball shot tracking app designed to help players improve accuracy and consistency through structured tracking and analysis.
+           <br> Key Features:
+            ✅ 100-Shot Challenge: Test your consistency by logging makes and misses in a structured format.
+            ✅ Freestyle Mode: Track shots freely without restrictions for casual practice sessions.
+            ✅ Detailed Statistics: Get insights into your shooting percentage, trends, and progress over time.
+            ✅ Clean & Simple Interface: Easily log shots with a tap and review your stats at a glance.
+            
+            Take control of your training with Shot Master and elevate your game, one shot at a time! </p>
+        <button id="livedemoBtn" onclick='location.href="https://callmeteddyfx.github.io/ShotMaster100_v1/"'>Live Demo</button>
         </div>
     </li>
 </ul> 
@@ -39,7 +55,7 @@
 <li>
    <div id="projectlist">
    <img src="./assets/brewhaven port.png" class="project-img">
-   <h2>BrewHaven</h2>
+   <h2>Brewhaven</h2>
    <p class="aboutproject">A replica Starbucks website showcasing responsive design, interactive features, and modern web development skills.</p>
    <button id="livedemoBtn" onclick='location.href="https://callmeteddyfx.github.io/BrewHaven/"'>Live Demo</button>
    </div>
@@ -68,11 +84,12 @@
 </body>
 <script>
 const lists = document.querySelectorAll('.projects li');
+const listimg = document.querySelectorAll('.projects li .aboutproject');
 const infoDiv = document.getElementById('infodiv');
 
 // Add a click event listener to each <li>
 lists.forEach((li) => {
-  li.addEventListener('click', function (event) {
+  li.addEventListener('click', function () {
     const img = this.querySelector('img');
     const clickedName = this.querySelector('h2');
     const clickedAbout = this.querySelector('.aboutproject');
