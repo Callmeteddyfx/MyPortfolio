@@ -140,6 +140,7 @@ html {
     background-color: white;
     border-radius: 1rem;
     overflow-y: auto;
+    scrollbar-width: none;
 }
 
 ul{
