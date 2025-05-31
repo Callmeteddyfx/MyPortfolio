@@ -9,8 +9,9 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #f0efef;
+  /* background-color: #f0efef; */
   /*background-image: url(./assets/paperbg.png);*/
+  background-color: white;
 }
 
 html {
@@ -214,6 +215,7 @@ section {
 
 #profileimage{
   border: none;
+  border-radius: 360px;
 }
 
 .section__pic-container {
