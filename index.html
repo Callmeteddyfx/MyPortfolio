@@ -272,13 +272,8 @@ Whether I’m developing an app, crafting a design, or tackling a new challenge,
               </button>
             </div>
           </div>
-          <div class="details-container color-container"  onclick="location.href='project2.html'"> <!-- More -->
-            <div class="article-container">
-            </div>
+          <div class="details-container color-container all-projects"  onclick="location.href='project2.html'"> <!-- More -->
             <h2 class="experience-sub-title project-title">All Projects</h2>
-            <div class="btn-container">
-  
-            </div>
           </div>
       
         </div>
@@ -293,7 +288,19 @@ Whether I’m developing an app, crafting a design, or tackling a new challenge,
     <section id="contact">
       <p class="section__text__p1">Get in Touch</p>
       <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
+      <!-- Contact Box -->
+        <div class="contact-info-div">
+        <div class="contact_info_div">
+        <textarea id="contact_text_content" type="text" placeholder="Enter your message..."></textarea>
+      <select id="send_through">
+        <option value="email">Email</option>
+        <option value="number">Phone Number</option>
+      </select>
+        </div>
+        <button id="contact_info_send">Send</button>
+      </div>
+
+<!--       <div class="contact-info-upper-container">
         <div class="contact-info-container">
           <img
             src="./assets/email.png"
@@ -310,7 +317,7 @@ Whether I’m developing an app, crafting a design, or tackling a new challenge,
           />
           <p><a href="https://www.linkedin.com/public-profile/settings?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact-info%3BeARMWKZJRzCzXkhLxo3YLg%3D%3D">LinkedIn</a></p>
         </div>
-      </div>
+      </div> -->
     </section>
     <footer>
       <nav>

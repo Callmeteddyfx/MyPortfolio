@@ -139,6 +139,20 @@ document.addEventListener('DOMContentLoaded', () => {
   fadeTexts.forEach((text) => observer.observe(text));
 });
 
+document.getElementById('contact_info_send').addEventListener('click', () => {
+  const sendThrough = document.getElementById('send_through').value;
+  const messageValue = document.getElementById('contact_text_content').value;
+  console.log(sendThrough);
 
+  if (sendThrough == 'email'){
+    const message = encodeURIComponent(messageValue);
+    const mailtoLink = `mailto:davidke.work@gmail.com?subject=Message&body=${message}`;
+    window.location.href = mailtoLink;
+  } else {
+const smsLink = `sms:+12508800572?body=${messageValue}`;
+window.location.href = smsLink;  
+  }
+}
+ )
 getexpDate();
 window.onload = getexpDate;
