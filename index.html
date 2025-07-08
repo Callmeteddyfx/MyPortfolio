@@ -289,9 +289,15 @@ Whether I’m developing an app, crafting a design, or tackling a new challenge,
       <p class="section__text__p1">Get in Touch</p>
       <h1 class="title">Contact Me</h1>
       <!-- Contact Box -->
-        <div class="contact-info-div">
+       <form id="contact-form" action="https://formsubmit.co/de050df7ddd6df4c1c648da18023fda2 " method="POST">
+    <input type="hidden" name="_subject" value="New message from portfolio">
+    <input type="hidden" name="_next" value=https://github.com/Callmeteddyfx/MyPortfolio/thankyou.html>
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="box">
+
+        <div class="contact_box">
         <div class="contact_info_div">
-        <textarea id="contact_text_content" type="text" placeholder="Enter your message..."></textarea>
+        <textarea id="message" name="message" type="text" placeholder="Enter your message..." required></textarea>
       <select id="send_through">
         <option value="email">Email</option>
         <option value="number">Phone Number</option>
@@ -299,6 +305,7 @@ Whether I’m developing an app, crafting a design, or tackling a new challenge,
         </div>
         <button id="contact_info_send">Send</button>
       </div>
+        </form>
 
 <!--       <div class="contact-info-upper-container">
         <div class="contact-info-container">
@@ -332,6 +339,7 @@ Whether I’m developing an app, crafting a design, or tackling a new challenge,
       </nav>
       <p>Copyright &#169; 2024 David Egbuawa. All Rights Reserved.</p>
     </footer>
-    <script src="script.js"></script>
   </body>
+
+  <script src="script.js"></script>
 </html>

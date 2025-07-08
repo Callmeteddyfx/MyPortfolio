@@ -590,7 +590,7 @@ article .icon {
 }
 
 /* CONTACT UPDATE */
-#contact_text_content{
+#message{
   font-family: "Poppins", sans-serif;
   border: none;
   outline: none;
@@ -627,6 +627,7 @@ article .icon {
   cursor: pointer;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
+  font-size: medium;
   transition: all 300ms ease;
   padding: 0.5rem;
   width: 100%;
