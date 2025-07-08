@@ -150,6 +150,9 @@ document.getElementById('contact_info_send').addEventListener('click', () => {
   if (sendThrough == 'email'){
     if (messageValue) {
     document.getElementById('contact-form').submit();
+    setTimeout(() =>{
+      document.getElementById('message').value = '';
+    }, 1000);
   } else {
     alert('Message field is empty');
   }
