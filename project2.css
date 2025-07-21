@@ -102,6 +102,7 @@ section{
     padding: 0;
     display: flex;
     text-align: center;
+    justify-content: center;
     align-items: center; 
     overflow-x: hidden;
     overflow-y: auto;
