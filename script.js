@@ -138,6 +138,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   fadeTexts.forEach((text) => observer.observe(text));
 });
+document.addEventListener('DOMContentLoaded', () => {
+  const fadeTexts = document.querySelectorAll('.abouttextprofile');
+
+  const observerOptions = {
+    threshold: thresholdTime, // Trigger when 20% of the element is visible
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible'); // Add the visible class
+      } else {
+        entry.target.classList.remove('visible'); // Optional: Remove class when out of view
+      }
+    });
+  }, observerOptions);
+
+  fadeTexts.forEach((text) => observer.observe(text));
+});
 
  document.getElementById("contact-form").addEventListener("submit", function (e) {
     e.preventDefault();

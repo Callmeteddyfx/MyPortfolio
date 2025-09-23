@@ -26,6 +26,11 @@ html{
     scrollbar-width: none;
 }
 
+a,
+.btn {
+  transition: all 300ms ease;
+}
+
 h1{
     margin-bottom: 1rem;
 }
