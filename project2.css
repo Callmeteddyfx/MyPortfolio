@@ -1,237 +1,217 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
+:root{
+    color-scheme: light;
+    --page-max-width: 1100px;
+    --surface: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    --surface-border: rgba(15, 23, 42, 0.12);
+    --surface-shadow: 0 22px 50px rgba(15, 23, 42, 0.08);
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --text-strong: #0f172a;
+    --text-body: #1f2937;
+}
+
 *{
     margin: 0;
     padding: 0;
-}
-
-a,
-.btn {
-  transition: all 300ms ease;
-}
-
-body, html {
-      font-family: "Poppins", sans-serif;
-      background-color: white;
-      overflow-x: hidden;
-      display: flex;
-      flex-direction: column;
-      --image-size: 150px;
-      margin: 0;
-      padding: 0;
-}
-
-html{
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-}
-
-a,
-.btn {
-  transition: all 300ms ease;
-}
-
-h1{
-    margin-bottom: 1rem;
-}
-
-h1, p{
-    font-family: "Poppins";
-    font-weight: 500;
-    color: rgb(85, 85, 85);
-}
-
-
-button{
-    font-family: "Poppins";
-    font-weight: 600;
-    border-radius: 0.7rem;
-}
-
-section{
-    padding: 1rem;
-    display: flex;
-    width: 100dvw;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.projectwrapper{
-    max-width: 1200px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-.project_div{
-    cursor: pointer;
-    border:  rgb(163, 163, 163) 1px solid;;
-    border-radius: 1.5rem;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    padding: 1rem;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    transition: box-shadow 200ms ease;
 }
 
-.project_div:hover{
-  transition: all 0.2s ease;
-  box-shadow: 0px 0px 5px rgb(0, 0, 0, 0.2);
+a{
+    color: inherit;
+    text-decoration: none;
 }
 
-.text_wrapper{
-    width: 80%;
-    height: 100%;
-    min-width: 0;
-    min-height: 0;
+html, body{
+    width: 100%;
+    min-height: 100%;
+    font-family: "Poppins", sans-serif;
+    background: #fff;
+    color: var(--text-body);
+}
+
+.page{
+    max-width: var(--page-max-width);
+    margin: 0 auto;
+    padding: clamp(2rem, 4vw, 4rem) clamp(1.5rem, 5vw, 4rem);
     display: flex;
-    align-items: center;
     flex-direction: column;
+    gap: clamp(3rem, 6vw, 5rem);
 }
 
-.title{
-    flex: 0.5;
+.projects-page{
+    width: 100%;
 }
 
-.info{
-    flex: 5;
-    width: 90%;
-    height: 100%;
-    padding: 0;
+.project-section{
     display: flex;
-    text-align: center;
+    flex-direction: column;
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.section_header{
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: left;
+}
+
+.section_header h1{
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 600;
+    color: var(--text-strong);
+}
+
+.section_description{
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    line-height: 1.6;
+    color: rgba(15, 23, 42, 0.8);
+}
+
+.project_grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.project_card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.25rem, 3vw, 1.75rem);
+    padding: clamp(1.5rem, 3vw, 2rem);
+    background: var(--surface);
+    border-radius: 1.5rem;
+    border: 1px solid var(--surface-border);
+    box-shadow: var(--surface-shadow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    overflow: hidden;
+}
+
+.project_card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 28px 60px rgba(15, 23, 42, 0.12);
+}
+
+.project_media{
+    display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: center; 
-    overflow-x: hidden;
-    overflow-y: auto;
-    line-height: 1.4;
-    text-wrap: line;
-    scrollbar-width: thin;
-    word-wrap: break-word;   
-    overflow-wrap: break-word;
+}
+
+.project_img{
+    width: clamp(150px, 45%, 210px);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 1rem;
+    background: #fff;
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.15);
+}
+
+.project_content{
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.85rem, 2vw, 1.25rem);
+}
+
+.project_title{
+    font-size: clamp(1.4rem, 3vw, 1.75rem);
+    font-weight: 600;
+    color: var(--text-strong);
+}
+
+.project_info{
+    font-size: clamp(1rem, 2.5vw, 1.05rem);
+    line-height: 1.7;
+    color: rgba(15, 23, 42, 0.85);
+}
+
+.project_actions{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
 }
 
 .btn{
-    flex: 1;
-    width: 100%;
-}
-
-.project_img{
-    width: var(--image-size);
-    height: var(--image-size);
-    object-fit: cover;
-    
-}
-
-.livedemoBtn, .githubrepoBtn{
-    background-color: transparent;
-    outline: none;
-    border: rgb(163, 163, 163) 1px solid;
-    width: 100%;
-    min-width: 0;
-    margin-top: 10px;
-    cursor: pointer;
-    height: fit-content;
-    padding: 5px;
-    transition: all 0.5s ease;
-}
-
-.livedemoBtn:hover, .githubrepoBtn:hover{
-    transition: all 0.5s ease;
-    background: rgb(33, 0, 181);
-    color: white;
-}
-
-@media only screen and (max-width: 600px) {
-  /* Styles for devices with width 600px and below (typical phones) */
-
-  body,html{
-    overflow-x: hidden;
-  }
-
-  section{
-    padding: 1rem;
-    display: flex;
-    width: 100dvw;
-    padding-left: 0;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.projectwrapper{
-    max-width: 100dvw;
-    width: 100%;
-    margin: 0;
-    display: grid;
-    justify-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 0rem;
-    padding: 0.5rem;
-}
-
-.project_div{
-    border: 1px solid black;
-    margin: 1rem;
-    width: 80%;
-    height: 400px;
-    padding: 1rem;
-    min-height: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-.text_wrapper{
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    min-height: 0;
+    padding: 0.55rem 1.3rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 0.85rem;
+    border: 1px solid transparent;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
 
-.project_img{
-    flex: 1;
-    width: 100%;
+.btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.15);
 }
 
-.title{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: end;
+.btn:focus-visible{
+    outline: 3px solid rgba(37, 99, 235, 0.45);
+    outline-offset: 2px;
 }
 
-.info{
-    display: none; /* hide description on mobile */
-    flex: 2;
-    width: 100%;
-    padding: 0;
-    overflow-y: auto;
-    line-height: 1.4;
-   align-items: center;
+.btn.primary{
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #fff;
+    box-shadow: 0 16px 36px rgba(37, 99, 235, 0.35);
 }
 
-.btns{
-    width: 100%;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    border-radius: 2rem;
+.btn.primary:hover{
+    background: linear-gradient(135deg, var(--primary-dark), #1e3a8a);
 }
 
-.livedemoBtn, .githubrepoBtn{
-    padding: 10px;
-    background: rgb(33, 0, 181, 0.5);
-    color: white;
+.btn.secondary{
+    background: #fff;
+    color: var(--text-strong);
+    border-color: rgba(15, 23, 42, 0.16);
 }
+
+.btn.secondary:hover{
+    background: rgba(15, 23, 42, 0.06);
+}
+
+.btn.tertiary{
+    background: transparent;
+    color: var(--primary);
+    border-color: rgba(37, 99, 235, 0.3);
+}
+
+.btn.tertiary:hover{
+    background: rgba(37, 99, 235, 0.1);
+}
+
+@media (max-width: 768px){
+    .section_header{
+        text-align: center;
+        align-items: center;
     }
+
+    .project_grid{
+        gap: 1.75rem;
+    }
+
+    .project_card{
+        align-items: center;
+        text-align: center;
+    }
+
+    .project_actions{
+        justify-content: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce){
+    *,
+    *::before,
+    *::after{
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
