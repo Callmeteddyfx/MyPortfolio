@@ -179,8 +179,7 @@ document.getElementById('contact_info_send').addEventListener('click', () => {
 const smsLink = `sms:+12508800572?body=${messageValue}`;
 window.location.href = smsLink;  
   }
-}
- );
+});
 
 
 getexpDate();
