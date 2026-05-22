@@ -368,6 +368,10 @@ strong {
 	padding: 0 0 clamp(3.5rem, 6vw, 5rem);
 }
 
+.working-on {
+	padding: 0 0 clamp(3.5rem, 6vw, 5rem);
+}
+
 .section-title {
 	margin: 0 0 2rem;
 	text-align: center;
@@ -563,6 +567,83 @@ strong {
 	font-family: var(--font-sans);
 }
 
+.working-card {
+	display: grid;
+	grid-template-columns: minmax(8rem, 10rem) minmax(0, 1fr);
+	align-items: center;
+	gap: clamp(1.25rem, 3vw, 2.5rem);
+	width: 100%;
+	min-height: 14rem;
+	padding: clamp(1.25rem, 3vw, 2rem);
+	border-radius: calc(var(--radius-lg) - 2px);
+	background: var(--color-surface);
+	border: 1px solid rgba(227, 227, 223, 0.9);
+	box-shadow: var(--shadow-soft);
+}
+
+.working-card-media {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	max-width: 8.5rem;
+	border-radius: 10px;
+	overflow: hidden;
+	background: #d9d9d9;
+	box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.03);
+}
+
+.working-card-media img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	object-position: center;
+	display: block;
+}
+
+.working-card-body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 9rem;
+	padding: 0.5rem 0;
+	text-align: center;
+}
+
+.working-card-copy {
+	display: grid;
+	gap: 0.35rem;
+	justify-items: center;
+	max-width: 28rem;
+	margin-inline: auto;
+}
+
+.working-card-copy h3 {
+	margin: 0;
+	font-size: clamp(1.4rem, 2vw, 1.9rem);
+	line-height: 1;
+	letter-spacing: -0.05em;
+	font-weight: 700;
+}
+
+.working-card-copy p {
+	margin: 0;
+	font-size: 0.98rem;
+	color: var(--color-text-muted);
+}
+
+.working-card-updated {
+	display: block;
+	width: 100%;
+	margin-top: 0.35rem;
+	padding-right: 0.25rem;
+	text-align: right;
+	font-size: 0.88rem;
+	color: var(--color-text);
+	white-space: nowrap;
+}
+
 @media (max-width: 860px) {
 	.header-inner {
 		gap: 0.75rem;
@@ -682,5 +763,20 @@ strong {
 
 	.project-card-all {
 		min-height: 12rem;
+	}
+
+	.working-card {
+		grid-template-columns: 1fr;
+		justify-items: center;
+		text-align: center;
+	}
+
+	.working-card-body {
+		width: 100%;
+	}
+
+	.working-card-updated {
+		padding-right: 0;
+		text-align: center;
 	}
 }
