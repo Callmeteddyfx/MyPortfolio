@@ -352,11 +352,17 @@ main > section[id]:not(.hero) {
 	min-height: 1px;
 }
 
-main > section {
-	opacity: var(--section-opacity, 0);
-	transform: translateY(var(--section-offset, 1rem));
-	transition: opacity 160ms linear, transform 220ms ease-out;
+
+.reveal-on-scroll {
+	opacity: 0;
+	transform: translateY(1rem);
+	transition: opacity 220ms ease, transform 220ms ease;
 	will-change: opacity, transform;
+}
+
+.reveal-on-scroll.visible {
+	opacity: 1;
+	transform: translateY(0);
 }
 
 strong {
@@ -443,9 +449,9 @@ strong {
 
 .project-media-track img {
 	width: 100%;
-	height: 100%;
+/* 	height: 100%; */
 	display: block;
-	object-fit: cover;
+	object-fit: contain;
 	object-position: center;
 	scroll-snap-align: start;
 	flex: 0 0 100%;

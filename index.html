@@ -59,9 +59,9 @@
                     </div>
 
                     <div class="hero-content">
-                        <p class="eyebrow">Web and Mobile Developer</p>
-                        <h1>David Egbuawa</h1>
-                        <p class="hero-copy">
+                        <p class="eyebrow reveal-on-scroll">Web and Mobile Developer</p>
+                        <h1 class="reveal-on-scroll">David Egbuawa</h1>
+                        <p class="hero-copy reveal-on-scroll">
                             I build clean, responsive digital experiences with a minimalist approach and a focus on performance.
                         </p>
 
@@ -74,7 +74,7 @@
 
                 <div class="stats-bar" aria-label="Key metrics">
                     <article class="stat-card">
-                        <strong>10+</strong>
+                        <strong>5+</strong>
                         <span>Projects Built</span>
                     </article>
                     <article class="stat-card">
@@ -95,18 +95,19 @@
 
         <section class="projects" id="projects">
             <div class="container">
-                <h2 class="section-title">Featured Projects</h2>
+                <h2 class="section-title reveal-on-scroll">Featured Projects</h2>
 
                 <div class="projects-carousel" aria-label="Featured projects carousel">
                     
-                    <article class="project-card">
+                    <article class="project-card reveal-on-scroll">
                         <div class="project-media" data-project-carousel>
                             <button class="project-media-arrow project-media-arrow-left" type="button" aria-label="Previous image">‹</button>
 
                             <div class="project-media-track" aria-label="ShotMaster project images" tabindex="0">
-                                <img src="files/IMG_5208.png" alt="ShotMaster preview 1">
-                                <img src="files/logo.png" alt="ShotMaster preview 2">
-                                <img src="files/logo_transparent.png" alt="ShotMaster preview 3">
+                                <img src="files/shotmaster100_img1.png" alt="ShotMaster preview 1">
+                                <img src="files/shotmaster100_img2.png" alt="ShotMaster preview 2">
+                                <img src="files/shotmaster1100_img3.png" alt="ShotMaster preview 3">
+                                <img src="files/shotmaster100_img4.png" alt="ShotMaster preview 4">
                             </div>
 
                             <button class="project-media-arrow project-media-arrow-right" type="button" aria-label="Next image">›</button>
@@ -114,16 +115,16 @@
 
                         <div class="project-body">
                             <h3>ShotMaster</h3>
-                            <p>A minimalist portfolio built to showcase clean layouts, responsive sections, and clear call-to-actions.</p>
+                            <p>ShotMaster is a web app where basketball shots can be tracked in real time so players can analyze streaks, heat zones, and consistency without breaking their rhythm and knowing where to improve.</p>
 
                             <div class="project-actions">
-                                <a class="project-button project-button-accent" href="#" aria-label="Open Portfolio Rebuild GitHub repository">Github</a>
-                                <a class="project-button project-button-neutral" href="#" aria-label="View Portfolio Rebuild test site">Test</a>
+                                <a class="project-button project-button-accent" href="https://github.com/Callmeteddyfx/ShotMaster100_v1" aria-label="Open Portfolio Rebuild GitHub repository">Github</a>
+                                <a class="project-button project-button-neutral" href="https://callmeteddyfx.github.io/ShotMaster100_v1/" aria-label="View Portfolio Rebuild test site">Demo</a>
                             </div>
                         </div>
                     </article>
 
-                    <a class="project-card project-card-all" href="#projects-list" aria-label="View all projects">
+                    <a class="project-card project-card-all reveal-on-scroll" href="#projects-list" aria-label="View all projects">
                         <span>All Projects</span>
                     </a>
                 </div>
@@ -132,22 +133,25 @@
 
         <section class="working-on" id="working-on">
             <div class="container">
-                <h2 class="section-title">Currently Working On</h2>
+                <h2 class="section-title reveal-on-scroll">Currently Working On</h2>
 
-                <article class="working-card">
+                <article class="working-card reveal-on-scroll">
                     <div class="working-card-media" aria-hidden="true">
-                        <img src="files/IMG_5208.png" alt="Current work preview">
+                        <img src="files/previousport_img1.png" alt="Current work preview">
                     </div>
 
                     <div class="working-card-body">
                         <div class="working-card-copy">
-                            <h3>Project Name</h3>
-                            <p>Description</p>
+                            <h3>Portfolio Website Rebrand</h3>
+                            <p>Currently working on the current Website you are scrolling through. I am doing a complete portfolio rebrand.
+                                However I believe once the migration is complete, I would link the github for what my previous portfolio looked like,
+                                incase you are curious.
+                            </p>
                         </div>
                     </div>
                 </article>
                 
-                <span class="working-card-updated">Updated Date: 20th February 2021</span>
+                <span class="working-card-updated reveal-on-scroll">Updated Date: 22nd, May 2026</span>
             </div>
         </section>
 
@@ -158,26 +162,18 @@
     </main>
 
     <script>
-        const sections = Array.from(document.querySelectorAll('main > section'));
+        const revealTargets = document.querySelectorAll('.reveal-on-scroll');
         const projectCarousels = Array.from(document.querySelectorAll('[data-project-carousel]'));
-        let rafId = null;
-
-        const updateSectionFade = () => {
-            const viewportCenter = window.innerHeight / 2;
-            const fadeDistance = Math.max(window.innerHeight * 0.7, 500);
-
-            sections.forEach((section) => {
-                const rect = section.getBoundingClientRect();
-                const sectionCenter = rect.top + rect.height / 2;
-                const distance = Math.abs(sectionCenter - viewportCenter);
-
-                const opacity = Math.max(0, Math.min(1, 1 - distance / fadeDistance));
-                const offset = (1 - opacity) * 16;
-
-                section.style.setProperty('--section-opacity', opacity.toFixed(3));
-                section.style.setProperty('--section-offset', `${offset.toFixed(2)}px`);
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
             });
-        };
+        }, {
+            root: null,
+            threshold: 0.1
+        });
 
         const updateCarouselButtons = (carousel) => {
             const track = carousel.querySelector('.project-media-track');
@@ -227,27 +223,22 @@
             }
         });
 
-        
-
-        const scheduleUpdate = () => {
-            if (rafId !== null) {
-                return;
-            }
-
-            rafId = window.requestAnimationFrame(() => {
-                rafId = null;
-                updateSectionFade();
-            });
-        };
-
-        window.addEventListener('scroll', scheduleUpdate, { passive: true });
-        window.addEventListener('resize', scheduleUpdate);
         window.addEventListener('load', () => {
             projectCarousels.forEach((carousel) => updateCarouselButtons(carousel));
         });
 
-        if (sections.length) {
-            scheduleUpdate();
+        revealTargets.forEach((target) => {
+            revealObserver.observe(target);
+        });
+
+        if (revealTargets.length) {
+            requestAnimationFrame(() => {
+                revealTargets.forEach((target) => {
+                    if (target.getBoundingClientRect().top < window.innerHeight * 0.9) {
+                        target.classList.add('visible');
+                    }
+                });
+            });
         }
     </script>
 </body>
