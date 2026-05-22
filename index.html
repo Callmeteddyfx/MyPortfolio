@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Minimalist personal portfolio for David Eghuawa, a full-stack web and mobile developer.">
     <title>David Egbuawa | Portfolio</title>
+    <link rel="icon" type="image/png" href="./files/logo_transparent.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Intel+One+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -65,8 +66,8 @@
                         </p>
 
                         <div class="hero-actions">
-                            <a class="button button-primary" href="#projects">View Projects</a>
-                            <a class="button button-secondary" href="#contact">Contact</a>
+                            <a class="button button-primary" href="./my_resumes/davidegbuawaresumeupdate(4).pdf">My Resume</a>
+                            <a class="button button-secondary" href="#contact">Contact Me</a>
                         </div>
                     </div>
                 </div>
@@ -81,8 +82,8 @@
                         <span>Months Coding</span>
                     </article>
                     <article class="stat-card">
-                        <strong>2</strong>
-                        <span>Years Timeline</span>
+                        <strong>Yes</strong>
+                        <span>Freelance</span>
                     </article>
                     <article class="stat-card">
                         <strong>8</strong>
@@ -92,11 +93,92 @@
             </div>
         </section>
 
-        <section id="projects"></section>
+        <section class="projects" id="projects">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+
+                <div class="projects-carousel" aria-label="Featured projects carousel">
+                    
+                    <article class="project-card">
+                        <div class="project-media" aria-hidden="true"></div>
+
+                        <div class="project-body">
+                            <h3>ShotMaster</h3>
+                            <p>A minimalist portfolio built to showcase clean layouts, responsive sections, and clear call-to-actions.</p>
+
+                            <div class="project-actions">
+                                <a class="project-button project-button-accent" href="#" aria-label="Open Portfolio Rebuild GitHub repository">Github</a>
+                                <a class="project-button project-button-neutral" href="#" aria-label="View Portfolio Rebuild test site">Test</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-media" aria-hidden="true"></div>
+
+                        <div class="project-body">
+                            <h3>Mobile Commerce App</h3>
+                            <p>A lightweight shopping experience focused on fast browsing, simple navigation, and smooth interactions.</p>
+
+                            <div class="project-actions">
+                                <a class="project-button project-button-accent" href="#" aria-label="Open Mobile Commerce App GitHub repository">GitHub</a>
+                                <a class="project-button project-button-neutral" href="#" aria-label="View Mobile Commerce App test site">Test</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <a class="project-card project-card-all" href="#projects-list" aria-label="View all projects">
+                        <span>All Projects</span>
+                    </a>
+                </div>
+            </div>
+        </section>
         <section id="skills"></section>
         <section id="experience"></section>
         <section id="about"></section>
         <section id="contact"></section>
     </main>
+
+    <script>
+        const sections = Array.from(document.querySelectorAll('main > section'));
+        let rafId = null;
+
+        const updateSectionFade = () => {
+            const viewportCenter = window.innerHeight / 2;
+            const fadeDistance = Math.max(window.innerHeight * 0.7, 500);
+
+            sections.forEach((section) => {
+                const rect = section.getBoundingClientRect();
+                const sectionCenter = rect.top + rect.height / 2;
+                const distance = Math.abs(sectionCenter - viewportCenter);
+
+                const opacity = Math.max(0, Math.min(1, 1 - distance / fadeDistance));
+                const offset = (1 - opacity) * 16;
+
+                section.style.setProperty('--section-opacity', opacity.toFixed(3));
+                section.style.setProperty('--section-offset', `${offset.toFixed(2)}px`);
+            });
+        };
+
+        
+
+        const scheduleUpdate = () => {
+            if (rafId !== null) {
+                return;
+            }
+
+            rafId = window.requestAnimationFrame(() => {
+                rafId = null;
+                updateSectionFade();
+            });
+        };
+
+        window.addEventListener('scroll', scheduleUpdate, { passive: true });
+        window.addEventListener('resize', scheduleUpdate);
+
+        if (sections.length) {
+            scheduleUpdate();
+        }
+    </script>
 </body>
 </html>
