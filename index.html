@@ -100,7 +100,17 @@
                 <div class="projects-carousel" aria-label="Featured projects carousel">
                     
                     <article class="project-card">
-                        <div class="project-media" aria-hidden="true"></div>
+                        <div class="project-media" data-project-carousel>
+                            <button class="project-media-arrow project-media-arrow-left" type="button" aria-label="Previous image">‹</button>
+
+                            <div class="project-media-track" aria-label="ShotMaster project images" tabindex="0">
+                                <img src="files/IMG_5208.png" alt="ShotMaster preview 1">
+                                <img src="files/logo.png" alt="ShotMaster preview 2">
+                                <img src="files/logo_transparent.png" alt="ShotMaster preview 3">
+                            </div>
+
+                            <button class="project-media-arrow project-media-arrow-right" type="button" aria-label="Next image">›</button>
+                        </div>
 
                         <div class="project-body">
                             <h3>ShotMaster</h3>
@@ -114,7 +124,17 @@
                     </article>
 
                     <article class="project-card">
-                        <div class="project-media" aria-hidden="true"></div>
+                        <div class="project-media" data-project-carousel>
+                            <button class="project-media-arrow project-media-arrow-left" type="button" aria-label="Previous image">‹</button>
+
+                            <div class="project-media-track" aria-label="Mobile Commerce App project images" tabindex="0">
+                                <img src="files/logo_transparent.png" alt="Mobile Commerce App preview 1">
+                                <img src="files/IMG_5208.png" alt="Mobile Commerce App preview 2">
+                                <img src="files/logo.png" alt="Mobile Commerce App preview 3">
+                            </div>
+
+                            <button class="project-media-arrow project-media-arrow-right" type="button" aria-label="Next image">›</button>
+                        </div>
 
                         <div class="project-body">
                             <h3>Mobile Commerce App</h3>
@@ -141,6 +161,7 @@
 
     <script>
         const sections = Array.from(document.querySelectorAll('main > section'));
+        const projectCarousels = Array.from(document.querySelectorAll('[data-project-carousel]'));
         let rafId = null;
 
         const updateSectionFade = () => {
@@ -160,6 +181,54 @@
             });
         };
 
+        const updateCarouselButtons = (carousel) => {
+            const track = carousel.querySelector('.project-media-track');
+            const leftButton = carousel.querySelector('.project-media-arrow-left');
+            const rightButton = carousel.querySelector('.project-media-arrow-right');
+
+            if (!track || !leftButton || !rightButton) {
+                return;
+            }
+
+            const maxScrollLeft = Math.max(0, track.scrollWidth - track.clientWidth);
+            leftButton.disabled = track.scrollLeft <= 1;
+            rightButton.disabled = track.scrollLeft >= maxScrollLeft - 1;
+        };
+
+        const scrollCarousel = (carousel, direction) => {
+            const track = carousel.querySelector('.project-media-track');
+
+            if (!track) {
+                return;
+            }
+
+            const distance = Math.max(track.clientWidth * 0.9, 240);
+            track.scrollBy({
+                left: direction * distance,
+                behavior: 'smooth'
+            });
+        };
+
+        projectCarousels.forEach((carousel) => {
+            const leftButton = carousel.querySelector('.project-media-arrow-left');
+            const rightButton = carousel.querySelector('.project-media-arrow-right');
+            const track = carousel.querySelector('.project-media-track');
+
+            if (leftButton) {
+                leftButton.addEventListener('click', () => scrollCarousel(carousel, -1));
+            }
+
+            if (rightButton) {
+                rightButton.addEventListener('click', () => scrollCarousel(carousel, 1));
+            }
+
+            if (track) {
+                track.addEventListener('scroll', () => updateCarouselButtons(carousel), { passive: true });
+                window.addEventListener('resize', () => updateCarouselButtons(carousel));
+                updateCarouselButtons(carousel);
+            }
+        });
+
         
 
         const scheduleUpdate = () => {
@@ -175,6 +244,9 @@
 
         window.addEventListener('scroll', scheduleUpdate, { passive: true });
         window.addEventListener('resize', scheduleUpdate);
+        window.addEventListener('load', () => {
+            projectCarousels.forEach((carousel) => updateCarouselButtons(carousel));
+        });
 
         if (sections.length) {
             scheduleUpdate();
