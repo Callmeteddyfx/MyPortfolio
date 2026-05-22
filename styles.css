@@ -382,6 +382,101 @@ strong {
 	padding: 0 0 clamp(3.5rem, 6vw, 5rem);
 }
 
+.about {
+	padding: 0 0 clamp(3.5rem, 6vw, 5rem);
+}
+
+.about-layout {
+	display: grid;
+	grid-template-columns: 1fr 320px;
+	gap: clamp(1.5rem, 4vw, 3rem);
+	align-items: center;
+}
+
+.about-copy p {
+	margin: 0 0 1rem;
+	color: var(--color-text-muted);
+	line-height: 1.6;
+	font-size: 1rem;
+}
+
+.about-visual {
+	width: 100%;
+	height: 100%;
+	max-width: 320px;
+	border-radius: 12px;
+	overflow: hidden;
+	background: #f3f3f3;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.about-visual img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+/* Contact section */
+.contact {
+	padding: 0 0 clamp(3.5rem, 6vw, 5rem);
+}
+
+.contact-subtitle {
+	text-align: center;
+	margin: 0.25rem 0 1.5rem;
+	color: var(--color-text-muted);
+	font-size: 1rem;
+}
+
+.contact-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: clamp(1rem, 2.5vw, 2rem);
+	align-items: stretch;
+	max-width: 920px;
+	margin: 0 auto;
+}
+
+.contact-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 1.25rem 1.5rem;
+	background: #f6f6f6;
+	border-radius: 12px;
+	text-decoration: none;
+	color: inherit;
+	box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+	transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.contact-card:hover,
+.contact-card:focus {
+	transform: translateY(-4px);
+	box-shadow: 0 8px 24px rgba(20,20,20,0.06);
+	outline: none;
+}
+
+.contact-card h4 {
+	margin: 0 0 0.5rem 0;
+	font-size: 0.95rem;
+	font-weight: 600;
+}
+
+.contact-card-value {
+	background: #ffffff;
+	padding: 0.6rem 0.9rem;
+	border-radius: 999px;
+	color: #333;
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
 .section-title {
 	margin: 0 0 2rem;
 	text-align: center;
@@ -720,6 +815,16 @@ strong {
 	display: block;
 }
 
+.contact-grid div{
+	cursor: pointer;
+	color: var(--color-accent);
+}
+
+
+.contact-grid div:hover{
+	color: var(--color-accent-hover);
+}
+
 @media (max-width: 860px) {
 	.header-inner {
 		gap: 0.75rem;
@@ -773,6 +878,20 @@ strong {
 	}
 
 	.skills-layout {
+		grid-template-columns: 1fr;
+	}
+
+	.about-layout {
+		grid-template-columns: 1fr;
+		text-align: center;
+	}
+
+	.about-visual {
+		max-width: 14rem;
+		margin: 0 auto;
+	}
+
+	.contact-grid {
 		grid-template-columns: 1fr;
 	}
 }
