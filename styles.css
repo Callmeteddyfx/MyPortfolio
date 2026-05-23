@@ -387,9 +387,10 @@ strong {
 }
 
 .about-layout {
-	display: grid;
-	grid-template-columns: 1fr 320px;
-	gap: clamp(1.5rem, 4vw, 3rem);
+	display: flex;
+/* 	grid-template-columns: 1fr 320px;
+	gap: clamp(1.5rem, 4vw, 3rem); */
+	text-align: center;
 	align-items: center;
 }
 
@@ -750,8 +751,9 @@ strong {
 }
 
 .skills-layout {
-	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	gap: 1.25rem;
 }
 
