@@ -258,8 +258,13 @@ body {
 	max-width: 36rem;
 }
 
+#hero-content-a{
+	color: var(--color-accent);
+}
+
 .eyebrow {
-	margin: 0 0 0.5rem;
+/* 	margin: 0 0 0.5rem; */
+	margin: 0;
 	font-size: 0.92rem;
 	font-weight: 500;
 	letter-spacing: 0.04em;
@@ -862,10 +867,6 @@ strong {
 
 	.hero-content {
 		max-width: 42rem;
-	}
-
-	#hero-content-a{
-		color: var(--color-accent);
 	}
 
 	.hero-actions {
