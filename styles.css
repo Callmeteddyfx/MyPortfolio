@@ -864,6 +864,10 @@ strong {
 		max-width: 42rem;
 	}
 
+	#hero-content-a{
+		color: var(--color-accent);
+	}
+
 	.hero-actions {
 		justify-content: center;
 	}
